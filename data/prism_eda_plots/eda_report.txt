@@ -1,0 +1,185 @@
+PRISM SURVEY DATASET - EDA REPORT
+================================================================================
+
+Total Participants: 1500
+Number of Features: 36
+
+Columns:
+  - user_id (object)
+  - survey_only (bool)
+  - num_completed_conversations (int64)
+  - consent (object)
+  - consent_age (object)
+  - lm_familiarity (object)
+  - lm_indirect_use (object)
+  - lm_direct_use (object)
+  - lm_frequency_use (object)
+  - self_description (object)
+  - system_string (object)
+  - age (object)
+  - gender (object)
+  - employment_status (object)
+  - education (object)
+  - marital_status (object)
+  - english_proficiency (object)
+  - study_id (object)
+  - study_locale (object)
+  - religion (object)
+  - ethnicity (object)
+  - location (object)
+  - lm_usecases (object)
+  - stated_prefs (object)
+  - order_lm_usecases (object)
+  - order_stated_prefs (object)
+  - generated_datetime (datetime64[s])
+  - timing_duration_s (int64)
+  - timing_duration_mins (float64)
+  - included_in_US_REP (bool)
+  - included_in_UK_REP (bool)
+  - included_in_balanced_subset (bool)
+  - religion_parsed (object)
+  - ethnicity_parsed (object)
+  - location_parsed (object)
+  - demographic_group (object)
+
+================================================================================
+DEMOGRAPHIC DISTRIBUTIONS
+================================================================================
+
+
+consent_age:
+----------------------------------------
+  I certify that I am 18 years of age or over: 1500 (100.0%)
+
+age:
+----------------------------------------
+  25-34 years old: 454 (30.3%)
+  18-24 years old: 297 (19.8%)
+  35-44 years old: 237 (15.8%)
+  45-54 years old: 208 (13.9%)
+  55-64 years old: 197 (13.1%)
+  65+ years old: 106 (7.1%)
+  Prefer not to say: 1 (0.1%)
+
+gender:
+----------------------------------------
+  Male: 757 (50.5%)
+  Female: 718 (47.9%)
+  Non-binary / third gender: 21 (1.4%)
+  Prefer not to say: 4 (0.3%)
+
+employment_status:
+----------------------------------------
+  Working full-time: 712 (47.5%)
+  Working part-time: 265 (17.7%)
+  Student: 191 (12.7%)
+  Unemployed, seeking work: 113 (7.5%)
+  Retired: 104 (6.9%)
+  Homemaker / Stay-at-home parent: 46 (3.1%)
+  Unemployed, not seeking work: 46 (3.1%)
+  Prefer not to say: 23 (1.5%)
+
+education:
+----------------------------------------
+  University Bachelors Degree: 637 (42.5%)
+  Graduate / Professional degree: 241 (16.1%)
+  Some University but no degree: 236 (15.7%)
+  Completed Secondary School: 209 (13.9%)
+  Vocational: 125 (8.3%)
+  Some Secondary: 24 (1.6%)
+  Completed Primary School: 16 (1.1%)
+  Prefer not to say: 9 (0.6%)
+  Some Primary: 3 (0.2%)
+
+marital_status:
+----------------------------------------
+  Never been married: 870 (58.0%)
+  Married: 463 (30.9%)
+  Divorced / Separated: 123 (8.2%)
+  Prefer not to say: 23 (1.5%)
+  Widowed: 21 (1.4%)
+
+english_proficiency:
+----------------------------------------
+  Native speaker: 886 (59.1%)
+  Fluent: 405 (27.0%)
+  Advanced: 160 (10.7%)
+  Intermediate: 42 (2.8%)
+  Basic: 7 (0.5%)
+
+religion:
+----------------------------------------
+  {'self_described': 'no affiliation', 'categorised': 'Non-religious', 'simplified': 'No Affiliation'}: 682 (45.5%)
+  {'self_described': 'christian', 'categorised': 'Christian', 'simplified': 'Christian'}: 195 (13.0%)
+  {'self_described': 'catholic', 'categorised': 'Christian', 'simplified': 'Christian'}: 102 (6.8%)
+  {'self_described': 'agnostic', 'categorised': 'Agnostic', 'simplified': 'No Affiliation'}: 67 (4.5%)
+  {'self_described': 'prefer not to say', 'categorised': 'Prefer not to say', 'simplified': 'Prefer not to say'}: 58 (3.9%)
+  {'self_described': 'atheist', 'categorised': 'Non-religious', 'simplified': 'No Affiliation'}: 57 (3.8%)
+  {'self_described': 'christianity', 'categorised': 'Christian', 'simplified': 'Christian'}: 41 (2.7%)
+  {'self_described': 'jewish', 'categorised': 'Jewish', 'simplified': 'Jewish'}: 32 (2.1%)
+  {'self_described': 'roman catholic', 'categorised': 'Christian', 'simplified': 'Christian'}: 22 (1.5%)
+  {'self_described': 'islam', 'categorised': 'Muslim', 'simplified': 'Muslim'}: 16 (1.1%)
+
+ethnicity:
+----------------------------------------
+  {'self_described': 'white', 'categorised': 'White', 'simplified': 'White'}: 482 (32.1%)
+  {'self_described': 'caucasian', 'categorised': 'White', 'simplified': 'White'}: 135 (9.0%)
+  {'self_described': 'prefer not to say', 'categorised': 'Prefer not to say', 'simplified': 'Prefer not to say'}: 80 (5.3%)
+  {'self_described': 'white british', 'categorised': 'White', 'simplified': 'White'}: 64 (4.3%)
+  {'self_described': 'black', 'categorised': 'Black / African', 'simplified': 'Black'}: 46 (3.1%)
+  {'self_described': 'latino', 'categorised': 'Hispanic / Latino', 'simplified': 'Hispanic'}: 41 (2.7%)
+  {'self_described': 'hispanic', 'categorised': 'Hispanic / Latino', 'simplified': 'Hispanic'}: 38 (2.5%)
+  {'self_described': 'african', 'categorised': 'Black / African', 'simplified': 'Black'}: 34 (2.3%)
+  {'self_described': 'asian', 'categorised': 'Asian', 'simplified': 'Asian'}: 24 (1.6%)
+  {'self_described': 'australian', 'categorised': 'White', 'simplified': 'White'}: 20 (1.3%)
+
+location:
+----------------------------------------
+  {'birth_country': 'United States', 'birth_countryISO': 'USA', 'birth_region': 'Americas', 'birth_subregion': 'Northern America', 'reside_country': 'United States', 'reside_region': 'Americas', 'reside_subregion': 'Northern America', 'reside_countryISO': 'USA', 'same_birth_reside_country': 'Yes', 'special_region': 'US'}: 330 (22.0%)
+  {'birth_country': 'United Kingdom', 'birth_countryISO': 'GBR', 'birth_region': 'Europe', 'birth_subregion': 'Northern Europe', 'reside_country': 'United Kingdom', 'reside_region': 'Europe', 'reside_subregion': 'Northern Europe', 'reside_countryISO': 'GBR', 'same_birth_reside_country': 'Yes', 'special_region': 'UK'}: 283 (18.9%)
+  {'birth_country': 'South Africa', 'birth_countryISO': 'ZAF', 'birth_region': 'Africa', 'birth_subregion': 'Sub-Saharan Africa', 'reside_country': 'South Africa', 'reside_region': 'Africa', 'reside_subregion': 'Sub-Saharan Africa', 'reside_countryISO': 'ZAF', 'same_birth_reside_country': 'Yes', 'special_region': 'Africa'}: 83 (5.5%)
+  {'birth_country': 'Mexico', 'birth_countryISO': 'MEX', 'birth_region': 'Americas', 'birth_subregion': 'Latin America and the Caribbean', 'reside_country': 'Mexico', 'reside_region': 'Americas', 'reside_subregion': 'Latin America and the Caribbean', 'reside_countryISO': 'MEX', 'same_birth_reside_country': 'Yes', 'special_region': 'Latin America and the Caribbean'}: 67 (4.5%)
+  {'birth_country': 'New Zealand', 'birth_countryISO': 'NZL', 'birth_region': 'Oceania', 'birth_subregion': 'Australia and New Zealand', 'reside_country': 'New Zealand', 'reside_region': 'Oceania', 'reside_subregion': 'Australia and New Zealand', 'reside_countryISO': 'NZL', 'same_birth_reside_country': 'Yes', 'special_region': 'Australia and New Zealand'}: 64 (4.3%)
+  {'birth_country': 'Chile', 'birth_countryISO': 'CHL', 'birth_region': 'Americas', 'birth_subregion': 'Latin America and the Caribbean', 'reside_country': 'Chile', 'reside_region': 'Americas', 'reside_subregion': 'Latin America and the Caribbean', 'reside_countryISO': 'CHL', 'same_birth_reside_country': 'Yes', 'special_region': 'Latin America and the Caribbean'}: 63 (4.2%)
+  {'birth_country': 'Australia', 'birth_countryISO': 'AUS', 'birth_region': 'Oceania', 'birth_subregion': 'Australia and New Zealand', 'reside_country': 'Australia', 'reside_region': 'Oceania', 'reside_subregion': 'Australia and New Zealand', 'reside_countryISO': 'AUS', 'same_birth_reside_country': 'Yes', 'special_region': 'Australia and New Zealand'}: 62 (4.1%)
+  {'birth_country': 'Israel', 'birth_countryISO': 'ISR', 'birth_region': 'Asia', 'birth_subregion': 'Western Asia', 'reside_country': 'Israel', 'reside_region': 'Asia', 'reside_subregion': 'Western Asia', 'reside_countryISO': 'ISR', 'same_birth_reside_country': 'Yes', 'special_region': 'Middle East'}: 46 (3.1%)
+  {'birth_country': 'Canada', 'birth_countryISO': 'CAN', 'birth_region': 'Americas', 'birth_subregion': 'Northern America', 'reside_country': 'Canada', 'reside_region': 'Americas', 'reside_subregion': 'Northern America', 'reside_countryISO': 'CAN', 'same_birth_reside_country': 'Yes', 'special_region': 'Northern America'}: 44 (2.9%)
+  {'birth_country': 'Spain', 'birth_countryISO': 'ESP', 'birth_region': 'Europe', 'birth_subregion': 'Southern Europe', 'reside_country': 'Spain', 'reside_region': 'Europe', 'reside_subregion': 'Southern Europe', 'reside_countryISO': 'ESP', 'same_birth_reside_country': 'Yes', 'special_region': 'Europe'}: 18 (1.2%)
+
+religion_parsed:
+----------------------------------------
+  Non-religious: 762 (50.8%)
+  Christian: 487 (32.5%)
+  Agnostic: 71 (4.7%)
+  Prefer not to say: 59 (3.9%)
+  Jewish: 42 (2.8%)
+  Muslim: 31 (2.1%)
+  Spiritual: 18 (1.2%)
+  Buddhist: 12 (0.8%)
+  Folk religion: 6 (0.4%)
+  Hindu: 5 (0.3%)
+
+ethnicity_parsed:
+----------------------------------------
+  White: 969 (64.6%)
+  Black / African: 122 (8.1%)
+  Hispanic / Latino: 121 (8.1%)
+  Asian: 95 (6.3%)
+  Prefer not to say: 86 (5.7%)
+  Mixed: 68 (4.5%)
+  Other: 17 (1.1%)
+  Middle Eastern / Arab: 14 (0.9%)
+  Indigenous / First Peoples: 8 (0.5%)
+
+location_parsed:
+----------------------------------------
+  {'birth_country': 'United States', 'birth_countryISO': 'USA', 'birth_region': 'Americas', 'birth_subregion': 'Northern America', 'reside_country': 'United States', 'reside_region': 'Americas', 'reside_subregion': 'Northern America', 'reside_countryISO': 'USA', 'same_birth_reside_country': 'Yes', 'special_region': 'US'}: 330 (22.0%)
+  {'birth_country': 'United Kingdom', 'birth_countryISO': 'GBR', 'birth_region': 'Europe', 'birth_subregion': 'Northern Europe', 'reside_country': 'United Kingdom', 'reside_region': 'Europe', 'reside_subregion': 'Northern Europe', 'reside_countryISO': 'GBR', 'same_birth_reside_country': 'Yes', 'special_region': 'UK'}: 283 (18.9%)
+  {'birth_country': 'South Africa', 'birth_countryISO': 'ZAF', 'birth_region': 'Africa', 'birth_subregion': 'Sub-Saharan Africa', 'reside_country': 'South Africa', 'reside_region': 'Africa', 'reside_subregion': 'Sub-Saharan Africa', 'reside_countryISO': 'ZAF', 'same_birth_reside_country': 'Yes', 'special_region': 'Africa'}: 83 (5.5%)
+  {'birth_country': 'Mexico', 'birth_countryISO': 'MEX', 'birth_region': 'Americas', 'birth_subregion': 'Latin America and the Caribbean', 'reside_country': 'Mexico', 'reside_region': 'Americas', 'reside_subregion': 'Latin America and the Caribbean', 'reside_countryISO': 'MEX', 'same_birth_reside_country': 'Yes', 'special_region': 'Latin America and the Caribbean'}: 67 (4.5%)
+  {'birth_country': 'New Zealand', 'birth_countryISO': 'NZL', 'birth_region': 'Oceania', 'birth_subregion': 'Australia and New Zealand', 'reside_country': 'New Zealand', 'reside_region': 'Oceania', 'reside_subregion': 'Australia and New Zealand', 'reside_countryISO': 'NZL', 'same_birth_reside_country': 'Yes', 'special_region': 'Australia and New Zealand'}: 64 (4.3%)
+  {'birth_country': 'Chile', 'birth_countryISO': 'CHL', 'birth_region': 'Americas', 'birth_subregion': 'Latin America and the Caribbean', 'reside_country': 'Chile', 'reside_region': 'Americas', 'reside_subregion': 'Latin America and the Caribbean', 'reside_countryISO': 'CHL', 'same_birth_reside_country': 'Yes', 'special_region': 'Latin America and the Caribbean'}: 63 (4.2%)
+  {'birth_country': 'Australia', 'birth_countryISO': 'AUS', 'birth_region': 'Oceania', 'birth_subregion': 'Australia and New Zealand', 'reside_country': 'Australia', 'reside_region': 'Oceania', 'reside_subregion': 'Australia and New Zealand', 'reside_countryISO': 'AUS', 'same_birth_reside_country': 'Yes', 'special_region': 'Australia and New Zealand'}: 62 (4.1%)
+  {'birth_country': 'Israel', 'birth_countryISO': 'ISR', 'birth_region': 'Asia', 'birth_subregion': 'Western Asia', 'reside_country': 'Israel', 'reside_region': 'Asia', 'reside_subregion': 'Western Asia', 'reside_countryISO': 'ISR', 'same_birth_reside_country': 'Yes', 'special_region': 'Middle East'}: 46 (3.1%)
+  {'birth_country': 'Canada', 'birth_countryISO': 'CAN', 'birth_region': 'Americas', 'birth_subregion': 'Northern America', 'reside_country': 'Canada', 'reside_region': 'Americas', 'reside_subregion': 'Northern America', 'reside_countryISO': 'CAN', 'same_birth_reside_country': 'Yes', 'special_region': 'Northern America'}: 44 (2.9%)
+  {'birth_country': 'Spain', 'birth_countryISO': 'ESP', 'birth_region': 'Europe', 'birth_subregion': 'Southern Europe', 'reside_country': 'Spain', 'reside_region': 'Europe', 'reside_subregion': 'Southern Europe', 'reside_countryISO': 'ESP', 'same_birth_reside_country': 'Yes', 'special_region': 'Europe'}: 18 (1.2%)
