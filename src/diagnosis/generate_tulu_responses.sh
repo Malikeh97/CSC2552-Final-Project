@@ -3,12 +3,12 @@
 #SBATCH --job-name=tulu_generate
 #SBATCH --output=/home/ehghaghi/scratch/ehghaghi/tulu_runs/run_logs/%x_%j.out
 #SBATCH --error=/home/ehghaghi/scratch/ehghaghi/tulu_runs/run_logs/%x_%j.err
-#SBATCH --partition=gpubase_l40s_b2
+#SBATCH --partition=gpubase_l40s_b3
 #SBATCH --gres=gpu:l40s:1
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=64GB
 #SBATCH --account=aip-craffel
-#SBATCH --time=12:00:00
+#SBATCH --time=23:00:00
 
 echo "Job ${SLURM_JOB_NAME} (${SLURM_JOB_ID}) started at $(date)"
 echo "Running on node: $(hostname)"
@@ -23,6 +23,8 @@ module load cuda/12.6
 module load gcc arrow/19.0.1 python/3.11
 source /home/ehghaghi/projects/aip-craffel/ehghaghi/c-btm-distillation/uv-x86_64-unknown-linux-gnu/distill_env/bin/activate
 
+pip install protobuf sentencepiece
+
 # Export cache dirs
 export SCRATCH="/home/ehghaghi/scratch/ehghaghi"
 export HUGGINGFACE_HUB_CACHE=$SCRATCH/.cache
@@ -34,10 +36,10 @@ mkdir -p $SCRATCH/tulu_runs/run_logs $SCRATCH/tmp
 # ====================
 INPUT_CSV="/home/ehghaghi/projects/aip-craffel/ehghaghi/CSC2552-Final-Project/data/prompt_controversy.csv"  # UPDATE THIS
 OUTPUT_DIR="$SCRATCH/tulu_runs/outputs"
-MODEL_CHECKPOINT="allenai/Llama-3.1-Tulu-3-8B-SFT"  # UPDATE THIS
-MODEL_NAME="Llama-3.1-Tulu-3-8B-SFT" 
+MODEL_CHECKPOINT="meta-llama/Llama-3.1-8B"  # UPDATE THIS
+MODEL_NAME="Llama-3.1-8B" 
 N_RESPONSES=10
-MAX_NEW_TOKENS=1024
+MAX_NEW_TOKENS=512
 TEMPERATURE=1.0
 TOP_P=0.9
 
@@ -45,7 +47,7 @@ TOP_P=0.9
 mkdir -p $OUTPUT_DIR
 
 # Set output filename based on model type
-OUTPUT_CSV="$OUTPUT_DIR/tulu_${MODEL_NAME}_responses_${SLURM_JOB_ID}.csv"
+OUTPUT_CSV="$OUTPUT_DIR/prompt_controversy_quality_variance_${MODEL_NAME}_responses_${SLURM_JOB_ID}.csv"
 
 echo "================================"
 echo "Configuration:"
@@ -56,7 +58,7 @@ echo "N Responses: $N_RESPONSES"
 echo "================================"
 
 # Build the command
-CMD="python -u generate_tulu_responses.py \
+CMD="python -u generate_tulu_responses_v2.py \
     --input_csv $INPUT_CSV \
     --output_csv $OUTPUT_CSV \
     --model_checkpoint $MODEL_CHECKPOINT \
